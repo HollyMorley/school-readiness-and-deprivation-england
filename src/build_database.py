@@ -9,39 +9,71 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import EYFSP_PATH, IMD_PATH, DATABASE_PATH
 
 
-def load_data(report: bool = True) -> tuple[pd.DataFrame, pd.DataFrame]:
+def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
+    # --- Load EYFSP data ---
     eyfsp_df = pd.read_csv(EYFSP_PATH)
-    imd_df = pd.read_excel(IMD_PATH, sheet_name="IMD")
 
     if report:
         print("\nEYFSP DataFrame:\n======================================")
         print(eyfsp_df.shape)
         print(eyfsp_df.columns.tolist())
 
-    imd_df.rename(columns={
-        "Local Authority District code (2019)": "la_code",
-        "Local Authority District name (2019)": "la_name",
-        "IMD - Average rank ": "avg_rank",
-        "IMD - Rank of average rank ": "rank_avg_rank",
-        "IMD - Average score ": "avg_score",
-        "IMD - Rank of average score ": "rank_avg_score",
-        "IMD - Proportion of LSOAs in most deprived 10% nationally ":
-            "prop_lsoas_deprived_10",
-        "IMD - Rank of proportion of LSOAs in most deprived 10% nationally "
-        "": "rank_prop_lsoas_deprived_10",
-        "IMD 2019 - Extent ": "extent",
-        "IMD 2019 - Rank of extent ": "rank_extent",
-        "IMD 2019 - Local concentration ": "local_concentration",
-        "IMD 2019 - Rank of local concentration ": "rank_local_concentration",
-    }, inplace=True)
+    # --- Load deprivation data ---
 
-    if report:
-        print(
-            "\nIMD DataFrame renamed:\n======================================")
-        print(imd_df.shape)
-        print(imd_df.columns.tolist())
+    deprivation_dfs = {
+        "imd": pd.read_excel(IMD_PATH, sheet_name="IMD"),
+        "iod_income": pd.read_excel(IMD_PATH, sheet_name="Income"),
+        "iod_employment": pd.read_excel(IMD_PATH, sheet_name="Employment"),
+        "iod_education": pd.read_excel(IMD_PATH, sheet_name="Education"),
+        "iod_health": pd.read_excel(IMD_PATH, sheet_name="Health"),
+        "iod_crime": pd.read_excel(IMD_PATH, sheet_name="Crime"),
+        "iod_barriers": pd.read_excel(IMD_PATH, sheet_name="Barriers"),
+        "iod_living": pd.read_excel(IMD_PATH, sheet_name="Living"),
+        "iod_idaci": pd.read_excel(IMD_PATH, sheet_name="IDACI"),
+        "iod_idaopi": pd.read_excel(IMD_PATH, sheet_name="IDAOPI"),
+    }
+    deprivation_feature_names = [
+        "IMD",
+        "Income",
+        "Employment",
+        "Education, Skills, and Training",
+        "Health Deprivation and Disability",
+        "Crime",
+        "Barriers to Housing and Services",
+        "Living Environment",
+        "IDACI",
+        "IDAOPI",
+    ]
+    if len(deprivation_dfs.keys()) != len(deprivation_feature_names):
+        raise ValueError(
+            "Number of deprivation DataFrames does not match number of "
+            "feature names.")
 
-    return eyfsp_df, imd_df
+    for (df_name, df), feat_name in zip(deprivation_dfs.items(), deprivation_feature_names):
+        df.rename(columns={
+            "Local Authority District code (2019)": "la_code",
+            "Local Authority District name (2019)": "la_name",
+            f"{feat_name} - Average rank ": "avg_rank",
+            f"{feat_name} - Rank of average rank ": "rank_avg_rank",
+            f"{feat_name} - Average score ": "avg_score",
+            f"{feat_name} - Rank of average score ": "rank_avg_score",
+            f"{feat_name} - Proportion of LSOAs in most deprived 10% "
+            f"nationally ": "prop_lsoas_deprived_10",
+            f"{feat_name} - Rank of proportion of LSOAs in most deprived 10% "
+            f"nationally ": "rank_prop_lsoas_deprived_10",
+        }, inplace=True)
+
+        if report:
+            print(
+                f"\n{df_name} DataFrame renamed:\n======================================")
+            print(df.shape)
+            print(df.columns.tolist())
+
+    # Add EYFSP data to dict
+    dfs = deprivation_dfs
+    dfs["eyfsp"] = eyfsp_df
+
+    return dfs
 
 
 def sanity_check(eyfsp_df: pd.DataFrame, imd_df: pd.DataFrame):
@@ -86,19 +118,16 @@ def sanity_check(eyfsp_df: pd.DataFrame, imd_df: pd.DataFrame):
             f"{most_deprived_la_expected}, but found "
             f"{most_deprived_la.values[0]}.")
 
-def write_to_database(eyfsp_df: pd.DataFrame, imd_df: pd.DataFrame):
+def write_to_database(dfs: dict[str, pd.DataFrame]):
     with sqlite3.connect(DATABASE_PATH) as conn:
-        eyfsp_df.to_sql("eyfsp", conn, if_exists="replace", index=False)
-        imd_df.to_sql("imd", conn, if_exists="replace", index=False)
-
-        print(f"Number of rows written to 'eyfsp' table: {len(eyfsp_df)}")
-        print(f"Number of rows written to 'imd' table: {len(imd_df)}")
+        for df_name, df in dfs.items():
+            df.to_sql(f"{df_name}", conn, if_exists="replace", index=False)
 
 
 def build_database():
-    eyfsp_df, imd_df = load_data(report=True)
-    sanity_check(eyfsp_df, imd_df)
-    write_to_database(eyfsp_df, imd_df)
+    dfs = load_data(report=True)
+    sanity_check(dfs["eyfsp"], dfs["imd"])
+    write_to_database(dfs)
     print("Finished building database.")
 
 
