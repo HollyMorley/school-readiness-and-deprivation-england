@@ -13,6 +13,14 @@ def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
     # --- Load EYFSP data ---
     eyfsp_df = pd.read_csv(EYFSP_PATH)
 
+    # Convert numeric columns that are stored as strings due to suppressed values
+    for col in ["gld_children_percent", "gld_children_count", "children_count",
+                "elgs_expected_average", "all_elgs_expected_children_count",
+                "all_elgs_expected_children_percent",
+                "comm_lang_lit_expected_children_count",
+                "comm_lang_lit_expected_children_percent"]:
+        eyfsp_df[col] = pd.to_numeric(eyfsp_df[col], errors="coerce")
+
     if report:
         print("\nEYFSP DataFrame:\n======================================")
         print(eyfsp_df.shape)
@@ -53,14 +61,8 @@ def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
         df.rename(columns={
             "Local Authority District code (2019)": "la_code",
             "Local Authority District name (2019)": "la_name",
-            f"{feat_name} - Average rank ": "avg_rank",
-            f"{feat_name} - Rank of average rank ": "rank_avg_rank",
             f"{feat_name} - Average score ": "avg_score",
             f"{feat_name} - Rank of average score ": "rank_avg_score",
-            f"{feat_name} - Proportion of LSOAs in most deprived 10% "
-            f"nationally ": "prop_lsoas_deprived_10",
-            f"{feat_name} - Rank of proportion of LSOAs in most deprived 10% "
-            f"nationally ": "rank_prop_lsoas_deprived_10",
         }, inplace=True)
 
         if report:
