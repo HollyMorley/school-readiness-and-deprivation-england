@@ -46,7 +46,7 @@ def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
         "IMD",
         "Income",
         "Employment",
-        "Education, Skills, and Training",
+        "Education, Skills and Training",
         "Health Deprivation and Disability",
         "Crime",
         "Barriers to Housing and Services",
