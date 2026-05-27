@@ -6,14 +6,16 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from config import EYFSP_PATH, IMD_PATH, DATABASE_PATH
+from config import EYFSP_PATH, IMD_PATH, TAKEUP_PATH, OFSTED_PATH, SEN_PATH, \
+    DATABASE_PATH
 
 
 def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
     # --- Load EYFSP data ---
     eyfsp_df = pd.read_csv(EYFSP_PATH)
 
-    # Convert numeric columns that are stored as strings due to suppressed values
+    # Convert numeric columns that are stored as strings due to suppressed
+    # values
     for col in ["gld_children_percent", "gld_children_count", "children_count",
                 "elgs_expected_average", "all_elgs_expected_children_count",
                 "all_elgs_expected_children_percent",
@@ -57,7 +59,8 @@ def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
             "Number of deprivation DataFrames does not match number of "
             "feature names.")
 
-    for (df_name, df), feat_name in zip(deprivation_dfs.items(), deprivation_feature_names):
+    for (df_name, df), feat_name in zip(deprivation_dfs.items(),
+                                        deprivation_feature_names):
         df.rename(columns={
             "Local Authority District code (2019)": "la_code",
             "Local Authority District name (2019)": "la_name",
@@ -67,13 +70,36 @@ def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
 
         if report:
             print(
-                f"\n{df_name} DataFrame renamed:\n======================================")
+                f"\n{df_name} DataFrame "
+                f"renamed:\n======================================")
             print(df.shape)
             print(df.columns.tolist())
 
-    # Add EYFSP data to dict
+    # --- Add extra factors for explaining residuals in EYFSP data after
+    # accounting for deprivation ---
+    takeup_df = pd.read_csv(TAKEUP_PATH)
+    ofsted_df = pd.read_csv(OFSTED_PATH)
+    sen_df = pd.read_csv(SEN_PATH)
+
+    if report:
+        print("\nTakeup DataFrame:\n======================================")
+        print(takeup_df.shape)
+        print(takeup_df.columns.tolist())
+
+        print("\nOfsted DataFrame:\n======================================")
+        print(ofsted_df.shape)
+        print(ofsted_df.columns.tolist())
+
+        print("\nSEN DataFrame:\n======================================")
+        print(sen_df.shape)
+        print(sen_df.columns.tolist())
+
+    # Add data to dict
     dfs = deprivation_dfs
     dfs["eyfsp"] = eyfsp_df
+    dfs["takeup"] = takeup_df
+    dfs["ofsted"] = ofsted_df
+    dfs["sen"] = sen_df
 
     return dfs
 
@@ -119,6 +145,7 @@ def sanity_check(eyfsp_df: pd.DataFrame, imd_df: pd.DataFrame):
             f"Expected most deprived rank to be "
             f"{most_deprived_la_expected}, but found "
             f"{most_deprived_la.values[0]}.")
+
 
 def write_to_database(dfs: dict[str, pd.DataFrame]):
     with sqlite3.connect(DATABASE_PATH) as conn:

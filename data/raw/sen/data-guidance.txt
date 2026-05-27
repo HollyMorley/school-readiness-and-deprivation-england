@@ -1,0 +1,71 @@
+Funded early education and childcare
+Reporting year 2025
+
+Description
+
+This document describes the data included in the January 2025 statistics release ‘Funded early education and childcare'.
+
+This data is released under the terms of the Open Government Licence (http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) and is intended to meet at least 3 stars for Open Data (https://www.gov.uk/government/publications/2010-to-2015-government-policy-government-transparency-and-accountability/2010-to-2015-government-policy-government-transparency-and-accountability#appendix-3-releasing-data-in-open-and-anonymised-formats).
+
+The methodology page (https://explore-education-statistics.service.gov.uk/methodology/education-provision-children-under-5-years-of-age-methodology) should be referenced alongside this data.
+
+Coverage
+
+These annual January statistics report on children under 5 registered for government funded entitlements in England and on providers and staff delivering them. Specifically, the:
+
+- universal entitlement for all 3 and 4-year-olds
+- working parent entitlement for eligible children aged 9 months to 4 years (expanded from April 2024 to include eligible 2-year-olds and expanded from September 2024 to include eligible children aged 9 to 23 months)
+- the families receiving additional support (FRAS) entitlement for eligible 2-year-olds (formerly known as the disadvantaged entitlement).
+
+Data is collected from local authorities covering state-funded schools (including nurseries), via the spring  school census (https://www.gov.uk/guidance/complete-the-school-census) and from private, voluntary and independent (PVI) providers (including childminders) via the  early years census (https://www.gov.uk/guidance/complete-the-early-years-census). In addition, general hospital schools data is collected via the  school-level annual school census (https://www.gov.uk/guidance/general-hospital-school-census-guide-to-submitting-data).
+
+The underlying data files include national, regional, and local authority level information for the years 2018 to 2025 (and back to 2011 in the headline figures file).
+
+File formats and conventions
+
+Symbology
+
+The following symbols are used in the underlying data files as follows:
+
+     z           data not applicable
+
+     x           data is unavailable for unknown or other reasons
+
+     c           suppressed to protect confidential information
+
+     low      rounds to 0, but is not 0
+
+Where any number is shown as zero, the original figure submitted was zero.
+
+Rounding
+
+In the headline statistics file, the numbers of children eligible for the working parent entitlement have been rounded to the nearest 1000 and the percentages of eligible children registered have been rounded to the nearest percentage. In data file 3, regional numbers have been rounded to the nearest 10; therefore regional numbers may not sum to national totals.
+
+Data files
+
+4 Children registered by ethnicity and SEN provision
+
+Filename: 4_early_years_provision_ethnicity_sen_2018_2025.csv
+Geographic levels: Local authority; National; Regional
+Time period: 2018 to 2025
+Content summary: Number of children registered for funded early years provision by entitlement type, age, year group, ethnicity and SEN provision.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name        |  Variable description
+-------------------  |  -----------------------------------------
+age                  |  Entitlement type and age
+ethnicity_major      |  Major ethnic group
+number_children      |  Number of registered children
+percentage_children  |  Percentage of registered children
+sen_provision        |  Special educational needs (SEN) provision
+year_group           |  Year group
+
+Footnotes:
+
+1. Children attending a general hospital school and a small number of children attending a special school do not follow the national curriculum. These children are included in totals but not breakdowns by year group.
+2. Where children under 4 years of age are recorded as in reception, this may be because they attend a school with a mixed-year class, because the local authority has agreed it would be beneficial to start reception year early, or for another reason.
+3. A very small number of children under 5 years of age are registered in a higher year group than reception. This may be because the local authority has agreed it would be beneficial for the child, or for another reason. These children have been included in the reception category.
+4. The 'Unknown' category describes cases where the child's ethnicity was refused or not obtained. These children are included in the 'Total' numbers.
+5. No data on ethnicity or SEN provision is available for children registered at general hospital schools.
+6. Data collected in 2021 (and to a lesser extent 2022) was affected by the impact of COVID-19 uncertainty on providers and parents. Further information is available on the methodology page.

@@ -1,0 +1,229 @@
+Early years foundation stage profile results
+Academic year 2024/25
+
+Description
+
+This guidance describes the data included in the underlying data files of the 2024/25 Accredited official statistics release ‘ Early years foundation stage profile results (https://explore-education-statistics.service.gov.uk/find-statistics/early-years-foundation-stage-profile-results)’.
+
+This data is released under the terms of the  Open Government Licence (http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) and is intended to meet at least 3 stars for  Open Data (https://www.gov.uk/government/publications/2010-to-2015-government-policy-government-transparency-and-accountability/2010-to-2015-government-policy-government-transparency-and-accountability#appendix-3-releasing-data-in-open-and-anonymised-formats).
+
+The  methodology (https://explore-education-statistics.service.gov.uk/methodology/early-years-foundation-stage-profile-results-methodology) page should be referenced alongside this data.
+
+Coverage
+
+These annual statistics report on teacher assessments of children’s development at the end of the early years foundation stage (EYFS), typically the summer term of the academic year in which a child turns 5 (reception year). The assessment framework, or EYFS Profile, consists of 17 early learning goals (ELGs) across 7 areas of learning.
+
+Data is collected from local authorities covering state-funded schools and private, voluntary and independent (PVI) providers as part of the  EYFS Profile return (https://www.gov.uk/guidance/early-years-foundation-stage-profile-return-how-to-submit-data). This data is then matched to other data sources, including the school and early years censuses, to obtain information on child characteristics.
+
+The underlying data files include national, regional, local authority-level, and local authority district-level information for England for 2021/22 to 2024/25.
+
+File formats and conventions
+
+Rounding and suppression
+
+Percentages and averages are presented as unrounded data (apart from in file 5, where they have been rounded to one decimal place).
+
+Suppression has not been applied to the underlying data.
+
+Symbology
+
+The following symbols are used in the underlying data files as follows:
+
+     z      not applicable
+
+     x      data not available
+
+     u      low reliability
+
+     b      break in time series
+
+Where any number is shown as zero, the original figure submitted was zero.
+
+Data files
+
+1 Headline measures by child characteristics
+
+Filename: 1_eyfsp_headline_measures_2022_2025.csv
+Geographic levels: Local authority; Local authority district; National; Regional
+Time period: 2021/22 to 2024/25
+Content summary: Headline measures by various child characteristics. Sub-national breakdowns are based on the location of the child’s school or provider.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name                            |  Variable description
+---------------------------------------  |  ---------------------------------------------------------------------------------------------------
+all_elgs_expected_children_count         |  Number of children at expected level across all early learning goals
+all_elgs_expected_children_percent       |  Percentage of children at expected level across all early learning goals
+breakdown                                |  Child characteristics breakdown
+children_count                           |  Number of children
+comm_lang_lit_expected_children_count    |  Number of children at expected level in Communication & Language and Literacy areas of learning
+comm_lang_lit_expected_children_percent  |  Percentage of children at expected level in Communication & Language and Literacy areas of learning
+elgs_expected_average                    |  Average number of early learning goals at expected level per child
+gld_children_count                       |  Number of children with a good level of development
+gld_children_percent                     |  Percentage of children with a good level of development
+sex                                      |  Sex
+
+
+2 Early learning goals and areas of learning by child characteristics
+
+Filename: 2_eyfsp_early_learning_goals_areas_of_learning_2022_2025.csv
+Geographic levels: Local authority; Local authority district; National; Regional
+Time period: 2021/22 to 2024/25
+Content summary: Early learning goals and areas of learning by various child characteristics. Sub-national breakdowns are based on the location of the child’s school or provider.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name              |  Variable description
+-------------------------  |  ----------------------------------------
+breakdown                  |  Child characteristics breakdown
+children_count             |  Number of children
+early_learning_goal        |  Early learning goal
+emerging_children_count    |  Number of children at emerging level
+emerging_children_percent  |  Percentage of children at emerging level
+expected_children_count    |  Number of children at expected level
+expected_children_percent  |  Percentage of children at expected level
+
+
+3 Headline measures by multiple child characteristics (national only)
+
+Filename: 3_eyfsp_headline_measures_multiple_characteristics_2022_2025.csv
+Geographic levels: National
+Time period: 2021/22 to 2024/25
+Content summary: Headline measures by multiple characteristics.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name                            |  Variable description
+---------------------------------------  |  ---------------------------------------------------------------------------------------------------
+all_elgs_expected_children_count         |  Number of children at expected level across all early learning goals
+all_elgs_expected_children_percent       |  Percentage of children at expected level across all early learning goals
+children_count                           |  Number of children
+comm_lang_lit_expected_children_count    |  Number of children at expected level in Communication & Language and Literacy areas of learning
+comm_lang_lit_expected_children_percent  |  Percentage of children at expected level in Communication & Language and Literacy areas of learning
+elgs_expected_average                    |  Average number of early learning goals at expected level per child
+ethnicity_minor                          |  Ethnicity minor
+first_language                           |  First language
+fsm_eligibility                          |  Free school meal eligibility
+gld_children_count                       |  Number of children with a good level of development
+gld_children_percent                     |  Percentage of children with a good level of development
+sen_provision                            |  SEN provision
+sex                                      |  Sex
+term_of_birth                            |  Term of birth
+
+
+4 Headline measures by deprivation
+
+Filename: 4_eyfsp_headline_measures_deprivation_2022_2025.csv
+Geographic levels: Local authority district; National; Regional
+Time period: 2021/22 to 2024/25
+Content summary: Headline measures by income deprivation affecting children index (IDACI 2019) decile and sex. Sub-national breakdowns are based on the location of the child’s residence.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name                            |  Variable description
+---------------------------------------  |  -----------------------------------------------------------------------------------------------------------
+all_elgs_expected_children_count         |  Number of children at expected level across all early learning goals
+all_elgs_expected_children_percent       |  Percentage of children at expected level across all early learning goals
+children_count                           |  Number of children
+comm_lang_lit_expected_children_count    |  Number of children at expected level in Communication & Language and Literacy areas of learning
+comm_lang_lit_expected_children_percent  |  Percentage of children at expected level in Communication & Language and Literacy areas of learning
+elgs_expected_average                    |  Average number of early learning goals at expected level per child
+gld_children_count                       |  Number of children with a good level of development
+gld_children_percent                     |  Percentage of children with a good level of development
+idaci_decile                             |  Income Deprivation Affecting Children Index (IDACI) decile - 1 = 10% most deprived, 10 = 10% least deprived
+sex                                      |  Sex
+
+Footnotes:
+
+1. The statistics for 2021/22 to 2024/25 were updated on 5 February 2026 to be based on the 2025 version of IDACI (having been initially based on the 2019 version).
+2. Sub-national breakdowns are based on the location of the child’s residence.
+
+
+5 Headline measures timeseries (national only)
+
+Filename: 5_eyfsp_headline_measures_national_2013_2025.csv
+Geographic levels: National
+Time period: 2012/13 to 2024/25
+Content summary: Headline measures, including historical time series data.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name                            |  Variable description
+---------------------------------------  |  ---------------------------------------------------------------------------------------------------
+all_elgs_expected_children_percent       |  Percentage of children at expected level across all early learning goals
+children_count                           |  Number of children
+comm_lang_lit_expected_children_percent  |  Percentage of children at expected level in Communication & Language and Literacy areas of learning
+elgs_expected_average                    |  Average number of early learning goals at expected level per child
+gld_children_percent                     |  Percentage of children with a good level of development
+
+Footnotes:
+
+1. The early years foundation stage profile was significantly revised in September 2021. It is therefore not possible to directly compare assessment outcomes since 2021/22 with earlier years. See the methodology page for more information.
+2. The 2019/20 and 2020/21 data collections were cancelled due to coronavirus (COVID-19).
+3. Figures for 2012/13 to 2018/19 have been calculated using the National Pupil Database, which excludes service children living abroad, shielded pupils, and duplicate records. Therefore these figures may not exactly match previously published figures that were calculated using raw data.
+4. In 2018/19, 23 schools piloted the revised set of early learning goals and the revised approach to assessment and moderation. These schools are excluded from the results for 2019. In 2018, the pupils in these 23 schools represented 0.2% of the national cohort of children.
+
+
+6 Number of early learning goals at expected level by headline measure (national only)
+
+Filename: 6_eyfsp_number_early_learning_goals_expected_level_national_2022_2025.csv
+Geographic levels: National
+Time period: 2021/22 to 2024/25
+Content summary: Number of early learning goals (at the expected level) across all 17 early learning goals and across all 12 early learning goals contributing to a good level of development.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name            |  Variable description
+-----------------------  |  ----------------------------------------------------------
+children_count           |  Number of children
+children_percent         |  Percentage of children
+children_percent_change  |  Annual (percentage point) change in percentage of children
+elgs_expected_number     |  Number of ELGs at the expected level
+
+
+7 Early learning goal combinations for a good level of development (national only)
+
+Filename: 7_eyfsp_good_level_of_development_early_learning_goal_combinations_national_2022_2025.csv
+Geographic levels: National
+Time period: 2021/22 to 2024/25
+Content summary: Early learning goal combinations (at the expected level) across all 12 early learning goals contributing to a good level of development.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name                            |  Variable description
+---------------------------------------  |  -----------------------------------------------------------------------------------------------
+elg_building_relationships               |  Building relationships ELG at emerging or expected level
+elg_combination_children_count           |  Number of children with these ELGs (contributing to GLD)
+elg_combination_number_children_percent  |  Percentage of children with these ELGs (contributing to GLD), of those with this number of ELGs
+elg_comprehension                        |  Comprehension ELG at emerging or expected level
+elg_fine_motor_skills                    |  Fine motor skills ELG at emerging or expected level
+elg_gross_motor_skills                   |  Gross motor skills ELG at emerging or expected level
+elg_listening_attention_understanding    |  Listening, attention and understanding ELG at emerging or expected level
+elg_managing_self                        |  Managing self ELG at emerging or expected level
+elg_number                               |  Number ELG at emerging or expected level
+elg_number_children_count                |  Number of children with this number of ELGs (contributing to GLD)
+elg_numerical_patterns                   |  Numerical patterns ELG at emerging or expected level
+elg_self_regulation                      |  Self-regulation ELG at emerging or expected level
+elg_speaking                             |  Speaking ELG at emerging or expected level
+elg_word_reading                         |  Word reading ELG at emerging or expected level
+elg_writing                              |  Writing ELG at emerging or expected level
+elgs_expected_number                     |  Number of ELGs (contributing to GLD)
+
+
+Commentary analysis - areas of learning (national only)
+
+Filename: commentary_eyfsp_areas_of_learning_national_2022_2025.csv
+Geographic levels: National
+Time period: 2021/22 to 2024/25
+Content summary: Underlying data for Figure 2: Percentage of children at the expected level by area of learning, 2023/24 and 2024/25.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name              |  Variable description
+-------------------------  |  ----------------------------------------
+area_of_learning           |  Area of learning
+children_count             |  Number of children
+emerging_children_count    |  Number of children at emerging level
+emerging_children_percent  |  Percentage of children at emerging level
+expected_children_count    |  Number of children at expected level
+expected_children_percent  |  Percentage of children at expected level
