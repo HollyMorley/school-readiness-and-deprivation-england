@@ -9,6 +9,7 @@ select
     ,ofsted.weighted_score as ofsted_weighted_score
     ,sen_total.percentage_children as sen_prevalence
     ,(sen_ehc.percentage_children / sen_total.percentage_children) * 100 as sen_ehc_rate
+    ,(sen_nursery.number_children / (sen_nursery.number_children + sen_reception.number_children)) * 100 as sen_early_identification_rate
 
 from eyfsp eyfsp
 
@@ -69,6 +70,36 @@ inner join (
         and sen_provision = 'EHC plan'
     group by new_la_code
 ) sen_ehc on eyfsp.new_la_code = sen_ehc.new_la_code
+
+inner join (
+    select
+        new_la_code,
+        number_children
+    from sen
+    where entitlement_type = 'Universal'
+        and year_group = 'Nursery'
+        and age = 'Total'
+        and ethnicity_major = 'Total'
+        and time_period = 2025
+        and geographic_level = 'Local authority'
+        and sen = 'SEN'
+        and sen_provision = 'Total'
+) sen_nursery on eyfsp.new_la_code = sen_nursery.new_la_code
+
+inner join (
+    select
+        new_la_code,
+        number_children
+    from sen
+    where entitlement_type = 'Universal'
+        and year_group = 'Reception'
+        and age = 'Total'
+        and ethnicity_major = 'Total'
+        and time_period = 2025
+        and geographic_level = 'Local authority'
+        and sen = 'SEN'
+        and sen_provision = 'Total'
+) sen_reception on eyfsp.new_la_code = sen_reception.new_la_code
 
 where
     eyfsp.time_period = '202425'

@@ -85,7 +85,7 @@ def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
     for col in ["percentage_eligible_children"]:
         takeup_df[col] = pd.to_numeric(takeup_df[col], errors="coerce")
 
-    for col in ["percentage_children"]:
+    for col in ["percentage_children", "number_children"]:
         sen_df[col] = pd.to_numeric(sen_df[col], errors="coerce")
 
     if report:
