@@ -1,9 +1,9 @@
 # Relationship Between Early Years Development, Deprivation, and Early Education Provisions in England
 
 > [!NOTE]
-> **tldr**: Deprivation can account for early years development beyond household income at the authority level in
-> England,
-> but I did not find a relationship between early years provision factors and early years development.
+> **tldr**: Area-level deprivation is strongly associated with early years development in England, even after controlling for
+> household income. The early years provision measures I tested show no meaningful association with GLD outcomes, whether
+> on their own or after accounting for deprivation.
 
 
 An exploratory analysis of the relationship between area-level deprivation and early years development across local
