@@ -89,10 +89,14 @@ relationships persist after controlling for these area-level household incomes.
 
 ## Key Findings
 
+<div align="center">
 <figure>
   <img src="docs/map_iod.png" alt="Choropleth maps of England showing each IoD domain and GLD by local authority district">
   <figcaption>Figure 1: Indices of deprivation and Good Level of Development by local authority district, all z-scored. Most domains share a similar spatial pattern, with higher deprivation in the North and Midlands. Barriers and Living Environment are concentrated in London.</figcaption>
 </figure>
+</div>
+
+<br>
 
 Most IoD indices are strongly associated with GLD at the local authority level. Health, Education, Employment, and IDACI
 are the strongest predictors (CV R² ~ 0.4–0.5), and these relationships persist after controlling for household income (
@@ -104,25 +108,33 @@ Figure 1), as
 the capital combines high housing pressures with relatively strong school outcomes. Living Environment and Crime are
 weak predictors that don't survive the income control (Figure 2).
 
+<div align="center">
 <figure>
   <img src="docs/raw_vs_wealth-controlled_IODs_GLD.png" width="500" alt="Bar chart comparing raw and wealth-controlled CV R² for each IoD domain predicting GLD">
   <figcaption>Figure 2: Cross-validated R² for each IoD domain predicting GLD, with and without controlling for household income (GDHI). Health, Employment, IDACI, and Education remain predictive after the income control.</figcaption>
 </figure>
+</div>
+
+<br>
 
 The provision measures I tested - early education take-up, Ofsted quality, SEN support, and graduate staff rates -
 showed no meaningful association with GLD outcomes, either raw or after controlling for wealth and deprivation (Figure
 3).
 
+<div align="center">
 <figure>
   <img src="docs/raw_provisions_gld.png" alt="Scatter plots of six provision measures against GLD, all showing flat relationships">
   <figcaption>Figure 3: Provision factors vs GLD (no controls). None show a meaningful relationship.</figcaption>
 </figure>
+</div>
+
+<br>
 
 ## Caveats
 
 - The analysis is correlational and cannot establish causality.
-- The analysis is somewhat circular, with deprivation measures likely capturing many of the same underlying factors that
-  influence early years development.
+- The analysis is perhaps circular. Deprivation measures may reflect many of the same underlying factors that
+  influence early years development. 
 - The deprivation data is from 2019, while the EYFSP data is from 2024/25, so there may be changes in deprivation levels
   that are not captured in the analysis.
 - The analysis is at the local authority district level, which does not capture individual experiences of deprivation or
@@ -144,7 +156,7 @@ provision and the home learning
 environment ([Nesta, 2025](https://www.nesta.org.uk/toolkit/how-does-early-education-and-care-affect-childrens-development/)) -
 neither of which is perhaps well captured by the area-level aggregate measures used here.
 
-It's also worth noting that this analysis is somewhat circular. Deprivation indices like health and education likely
+It's also worth noting that this analysis may be circular. Deprivation indices like health and education likely
 reflect many of the same underlying conditions that shape early development, so the strong correlations are partly
 tautological. Wealth also correlates with nearly everything — both the deprivation measures and GLD - so disentangling
 these relationships is inherently difficult.
