@@ -10,10 +10,7 @@ authority districts in England. The project investigates whether early years pro
 provider quality, SEN support) can account for variance in early years development outcomes beyond what deprivation
 alone predicts, and whether these relationships hold after controlling for household income.
 
-*
-
-*[View the full analysis notebook](https://nbviewer.org/github/HollyMorley/school-readiness-and-deprivation-england/blob/master/analysis.ipynb)
-**
+**[View the full analysis notebook](https://nbviewer.org/github/HollyMorley/school-readiness-and-deprivation-england/blob/master/analysis.ipynb)**
 
 ## Background
 
