@@ -2,3 +2,20 @@ data/early_years.db
 data/raw/**/*.csv
 data/raw/**/*.xlsx
 __pycache__/
+
+# Output files
+output/
+
+# Notebooks not for tracking
+affect_of_provisions_on_gld.ipynb
+analysis_archive_*.ipynb
+analysis_v*.ipynb
+
+# Scratch/planning files
+test.py
+plan.md
+notes_on_decisions.md
+
+# Other
+src/download_fingertips.py
+src/data/

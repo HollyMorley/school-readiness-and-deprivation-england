@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from config import EYFSP_PATH, IMD_PATH, TAKEUP_PATH, OFSTED_PATH, SEN_PATH, \
-    DATABASE_PATH
+    STAFF_PATH, WEALTH_PATH, DATABASE_PATH
 
 
 def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
@@ -75,11 +75,15 @@ def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
             print(df.shape)
             print(df.columns.tolist())
 
+    # --- Add wealth factor ---
+    wealth = pd.read_excel(WEALTH_PATH, sheet_name="Table 3", header=1)
+
     # --- Add extra factors for explaining residuals in EYFSP data after
     # accounting for deprivation ---
     takeup_df = pd.read_csv(TAKEUP_PATH)
     ofsted_df = pd.read_csv(OFSTED_PATH)
     sen_df = pd.read_csv(SEN_PATH)
+    staff_df = pd.read_csv(STAFF_PATH)
 
     # Convert string columns to numeric where appropriate
     for col in ["percentage_eligible_children"]:
@@ -87,6 +91,9 @@ def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
 
     for col in ["percentage_children", "number_children"]:
         sen_df[col] = pd.to_numeric(sen_df[col], errors="coerce")
+
+    for col in ["percentage_children_providers_graduate_staff"]:
+        staff_df[col] = pd.to_numeric(staff_df[col], errors="coerce")
 
     if report:
         print("\nTakeup DataFrame:\n======================================")
@@ -101,12 +108,18 @@ def load_data(report: bool = True) -> dict[str, pd.DataFrame]:
         print(sen_df.shape)
         print(sen_df.columns.tolist())
 
+        print("\nStaff DataFrame:\n======================================")
+        print(staff_df.shape)
+        print(staff_df.columns.tolist())
+
     # Add data to dict
     dfs = deprivation_dfs
+    dfs["wealth"] = wealth
     dfs["eyfsp"] = eyfsp_df
     dfs["takeup"] = takeup_df
     dfs["ofsted"] = ofsted_df
     dfs["sen"] = sen_df
+    dfs["staff"] = staff_df
 
     return dfs
 

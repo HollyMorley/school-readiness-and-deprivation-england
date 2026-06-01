@@ -14,5 +14,7 @@ OFSTED_PATH = (RAW_DATA_DIR / "ofsted" /
                "5_early_years_provision_ofsted_2025.csv")
 SEN_PATH = (RAW_DATA_DIR / "sen" /
             "4_early_years_provision_ethnicity_sen_2018_2025.csv")
-EY_REVIEW_IND = 93472
-OBESITY_IND = 90319
+STAFF_PATH = (RAW_DATA_DIR / "grad_staff" /
+            "8_early_years_provision_graduate_staff_pvis_2018_2025.csv")
+WEALTH_PATH = (RAW_DATA_DIR / "wealth" /
+            "regionalgrossdisposablehouseholdincomelocalauthorities2023.xlsx")

@@ -1,0 +1,70 @@
+Funded early education and childcare
+Reporting year 2025
+
+Description
+
+This document describes the data included in the January 2025 statistics release ‘Funded early education and childcare'.
+
+This data is released under the terms of the Open Government Licence (http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) and is intended to meet at least 3 stars for Open Data (https://www.gov.uk/government/publications/2010-to-2015-government-policy-government-transparency-and-accountability/2010-to-2015-government-policy-government-transparency-and-accountability#appendix-3-releasing-data-in-open-and-anonymised-formats).
+
+The methodology page (https://explore-education-statistics.service.gov.uk/methodology/education-provision-children-under-5-years-of-age-methodology) should be referenced alongside this data.
+
+Coverage
+
+These annual January statistics report on children under 5 registered for government funded entitlements in England and on providers and staff delivering them. Specifically, the:
+
+- universal entitlement for all 3 and 4-year-olds
+- working parent entitlement for eligible children aged 9 months to 4 years (expanded from April 2024 to include eligible 2-year-olds and expanded from September 2024 to include eligible children aged 9 to 23 months)
+- the families receiving additional support (FRAS) entitlement for eligible 2-year-olds (formerly known as the disadvantaged entitlement).
+
+Data is collected from local authorities covering state-funded schools (including nurseries), via the spring  school census (https://www.gov.uk/guidance/complete-the-school-census) and from private, voluntary and independent (PVI) providers (including childminders) via the  early years census (https://www.gov.uk/guidance/complete-the-early-years-census). In addition, general hospital schools data is collected via the  school-level annual school census (https://www.gov.uk/guidance/general-hospital-school-census-guide-to-submitting-data).
+
+The underlying data files include national, regional, and local authority level information for the years 2018 to 2025 (and back to 2011 in the headline figures file).
+
+File formats and conventions
+
+Symbology
+
+The following symbols are used in the underlying data files as follows:
+
+     z           data not applicable
+
+     x           data is unavailable for unknown or other reasons
+
+     c           suppressed to protect confidential information
+
+     low      rounds to 0, but is not 0
+
+Where any number is shown as zero, the original figure submitted was zero.
+
+Rounding
+
+In the headline statistics file, the numbers of children eligible for the working parent entitlement have been rounded to the nearest 1000 and the percentages of eligible children registered have been rounded to the nearest percentage. In data file 3, regional numbers have been rounded to the nearest 10; therefore regional numbers may not sum to national totals.
+
+Data files
+
+8 PVI providers with at least one accredited graduate staff member
+
+Filename: 8_early_years_provision_graduate_staff_pvis_2018_2025.csv
+Geographic levels: Local authority; National; Regional
+Time period: 2018 to 2025
+Content summary: Number of PVIs delivering government-funded early years provision with at least one accredited graduate staff member, by provider type. PVIs figures exclude providers where no child accessed all or the majority of their entitlement.
+
+Variable names and descriptions for this file are provided below:
+
+Variable name                                 |  Variable description
+--------------------------------------------  |  -------------------------------------------------------------------------------------------------
+number_children                               |  Number of registered children
+number_children_providers_graduate_staff      |  Number of registered children at providers with at least one accredited graduate staff member
+number_providers                              |  Number of providers
+number_providers_graduate_staff               |  Number of providers with at least one accredited graduate staff member
+percentage_children_providers_graduate_staff  |  Percentage of children registered at providers with at least one accredited graduate staff member
+percentage_providers_graduate_staff           |  Percentage of providers with at least one accredited graduate staff member
+pvi_provider_type                             |  Type of PVI provider - National level only
+
+Footnotes:
+
+1. Since 2019, data cleaning exercises with local authorities each year have improved data quality. Provider types have become more accurately recorded over the years and caution should therefore be taken when comparing changes in provider types between years, particularly for childminders and state-funded governor run provision, which has been reclassified from other in some instances.
+2. State-funded governor-run provision is included in the private, voluntary and independent providers category because data for these providers is returned on the early years census.
+3. Data collected in 2021 (and to a lesser extent 2022) was affected by the impact of COVID-19 uncertainty on providers and parents. Further information is available on the methodology page.
+4. Local authority day nurseries are included in the private, voluntary and independent providers category because data for these providers is returned on the early years census.
