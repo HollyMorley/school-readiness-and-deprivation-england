@@ -11,6 +11,8 @@ authority districts in England. The project investigates whether early years pro
 provider quality, SEN support) can account for variance in early years development outcomes beyond what deprivation
 alone predicts, and whether these relationships hold after controlling for household income.
 
+**[View the full analysis notebook](https://nbviewer.org/github/HollyMorley/school-readiness-and-deprivation-england/blob/master/analysis.ipynb)**
+
 ## Background
 
 The early years foundation stage profile (EYFSP) is a key measure of early years development in England, assessing
@@ -171,7 +173,7 @@ the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-
 ```
 school-readiness-and-deprivation-england/
 ├── config.py                  # Shared paths and constants
-├── analysis.ipynb             # Exploratory analysis notebook
+├── analysis.ipynb             # Analysis notebook (view on [nbviewer](https://nbviewer.org/github/HollyMorley/school-readiness-and-deprivation-england/blob/master/analysis.ipynb))
 ├── src/
 │   └── build_database.py      # Builds SQLite database from raw data files
 ├── sql/
