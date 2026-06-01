@@ -91,7 +91,7 @@ relationships persist after controlling for these area-level household incomes.
 
 <figure>
   <img src="docs/map_iod.png" alt="Choropleth maps of England showing each IoD domain and GLD by local authority district">
-  <figcaption>Figure 1: Indices of deprivation and Good Level of Development by local authority district, all z-scored. Most domains share a similar spatial pattern, with higher deprivation in the North and Midlands. Barriers and Living Environment are concentrated in London.</figcaption>
+  <figcaption><em>Figure 1: Indices of deprivation and Good Level of Development by local authority district, all z-scored. Most domains share a similar spatial pattern, with higher deprivation in the North and Midlands. Barriers and Living Environment are concentrated in London.</em></figcaption>
 </figure>
 
 &nbsp;
@@ -108,7 +108,7 @@ weak predictors that don't survive the income control (Figure 2).
 
 <figure>
   <img src="docs/raw_vs_wealth-controlled_IODs_GLD.png" width="500" alt="Bar chart comparing raw and wealth-controlled CV R² for each IoD domain predicting GLD">
-  <figcaption>Figure 2: Cross-validated R² for each IoD domain predicting GLD, with and without controlling for household income (GDHI). Health, Employment, IDACI, and Education remain predictive after the income control.</figcaption>
+  <figcaption><em>Figure 2: Cross-validated R² for each IoD domain predicting GLD, with and without controlling for household income (GDHI). Health, Employment, IDACI, and Education remain predictive after the income control.</em></figcaption>
 </figure>
 
 &nbsp;
@@ -119,7 +119,7 @@ showed no meaningful association with GLD outcomes, either raw or after controll
 
 <figure>
   <img src="docs/raw_provisions_gld.png" alt="Scatter plots of six provision measures against GLD, all showing flat relationships">
-  <figcaption>Figure 3: Provision factors vs GLD (no controls). None show a meaningful relationship.</figcaption>
+  <figcaption><em>Figure 3: Provision factors vs GLD (no controls). None show a meaningful relationship.</em></figcaption>
 </figure>
 
 &nbsp;
