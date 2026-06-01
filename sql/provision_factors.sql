@@ -18,7 +18,7 @@ inner join imd  imd on eyfsp.lad_code = imd.la_code
 
 inner join staff staff on eyfsp.new_la_code = staff.new_la_code
     and staff.pvi_provider_type_group = 'Total'
-    and staff.time_period = 2025
+    and staff.time_period = 2024
     and staff.geographic_level = 'Local authority'
 
 inner join takeup takeup on eyfsp.new_la_code = takeup.new_la_code

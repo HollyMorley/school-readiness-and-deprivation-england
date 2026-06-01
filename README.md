@@ -92,7 +92,7 @@ relationships persist after controlling for area-level income.
 </figure>
 
 Most IoD indices are strongly associated with GLD at the local authority level. Health, Education, Employment, and IDACI
-are the strongest predictors (CV R² ~ 0.3–0.4), and these relationships persist after controlling for household income.
+are the strongest predictors (CV R² ~ 0.4–0.5), and these relationships persist after controlling for household income.
 Barriers to Housing and Services is the only domain with a positive association - likely reflecting its concentration in
 affluent rural areas. Living Environment and Crime are weak predictors that don't survive the income control.
 
